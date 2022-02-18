@@ -16,9 +16,12 @@ public class UsuarioService {
     public ArrayList<UsuarioModel> obtenerUsuarios(){
         return (ArrayList<UsuarioModel>) usuarioRepository.findAll();
     }
+
     public UsuarioModel guardarUsuario(UsuarioModel usuarioModel) {
         return usuarioRepository.save(usuarioModel);
     }
+
+
 
     public Optional<UsuarioModel> obtenerPorId(Long id){
         return usuarioRepository.findById(id);
@@ -29,6 +32,14 @@ public class UsuarioService {
     public boolean eliminarUsuario(Long id){
         try{
             usuarioRepository.deleteById(id);
+            return true;
+        }catch(Exception e){
+            return false;
+        }
+    }
+    public boolean eliminarUsuarios(){
+        try{
+            usuarioRepository.deleteAll();
             return true;
         }catch(Exception e){
             return false;
