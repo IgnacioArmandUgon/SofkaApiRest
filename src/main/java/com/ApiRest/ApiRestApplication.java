@@ -11,12 +11,6 @@ import java.sql.SQLException;
 public class ApiRestApplication {
 
 	public static void main(String[] args) {
-		/*String url = "jdbc:mysql://localhost:3306/test?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-		try {
-			Connection conexion = DriverManager.getConnection(url,"root", "ToPro353");
-		} catch (SQLException e) {
-			e.printStackTrace(System.out);
-		}*/
 		SpringApplication.run(ApiRestApplication.class, args);
 	}
 
